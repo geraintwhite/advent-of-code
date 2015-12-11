@@ -10,7 +10,7 @@ def n(i):
         if not i[x]=='a':break
     return ''.join(i)
 while not f(i):i=n(i)
-print('part a',i)
+print('parta',i)
 i=n(i)
 while not f(i):i=n(i)
-print('part b',i)
+print('partb',i)
