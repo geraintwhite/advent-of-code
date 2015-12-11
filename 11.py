@@ -1,4 +1,5 @@
-from re import findall as a
+import re
+a=re.findall
 i='hepxcrrq'
 o=ord
 f=lambda i:not a(r'[iol]',i)and[z for z in (i[x:x+3]for x in range(len(i)-2))if o(z[2])-o(z[1])==o(z[1])-o(z[0])==1] and len(set(a(r'([a-z])\1',i)))>1
