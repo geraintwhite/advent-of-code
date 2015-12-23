@@ -1,13 +1,7 @@
-import math
+import math,itertools
+t,s,r=itertools.takewhile,math.sqrt,range
 i=34000000
-#i=100000
-def a(n,x=1):
-    while 10*sum(i+x//i for i in range(1,int(math.sqrt(x))+1) if x%i==0)<n:
-        x+=1
-    return x
-def b(n,x=1):
-    while 11*sum((i if x//i<=50 else 0)+(x//i if i<=50 else 0) for i in range(1,int(math.sqrt(x))+1) if x%i==0)<n:
-        x+=1
-    return x
-print('parta',a(i))
-print('partb',b(i))
+a=lambda n:list(t(lambda x:10*sum(i+x//i for i in r(1,int(s(x))+1)if x%i==0)<n,r(n)))
+b=lambda n:list(t(lambda x:11*sum(i*(x//i<=50)+x//i*(i<=50)for i in r(1,int(s(x))+1)if x%i==0)<n,r(n)))
+print('parta',len(a(i)))
+print('partb',len(b(i)))
